@@ -32,7 +32,7 @@ app.get("/", async (req, res) => {
 // Page where you should display 5 random images of dogs via DoggoApi
 app.get("/all-breeds", async (req, res) => {
   try {
-    let dogImgs = await myDog.getMultipleRandomDogs(8);
+    let dogImgs = await myDog.getMultipleRandomDogs(5);
     res.render("all-breeds", dogImgs);
   } catch {
     console.log("there was an error");
