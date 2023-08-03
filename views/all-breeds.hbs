@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="/styles/style.css"/>
 </head>
 <body>
-    
+     <header>
+      <p>Here are 5 Random Doggo Pic's</p>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/all-breeds">Get 5 pics of Random Breeds</a>
+        <a href="/schnauzer">Get a Schnauzer Miniature pic</a></nav>
+    </header>
+    <div class="dog-images">
+      {{#each message}}
+        <img src="{{this}}" />
+      {{/each}}
+    </div>
+    <footer><p>Developed at Ironhack</p></footer>
 </body>
 </html>

@@ -1,7 +1,7 @@
 // Require Packages
 const express = require("express");
-const hbs = require ("hbs");
-const DogApi = require('doggo-api-wrapper');
+const hbs = require("hbs");
+const DogApi = require("doggo-api-wrapper");
 
 // Create an Express Server that handles requests and responses
 const app = express();
@@ -16,18 +16,25 @@ app.set("view engine", "hbs");
 app.set("views", __dirname + "/views");
 
 // Make Public Static Files Available
-app.use(express.static('public'));
+app.use(express.static("public"));
 
 // Create Routes
+// Home Page
+app.get("/", async (req, res) => {
+  let dogImg = await myDog.getARandomDog();
+  res.render("index", { dogImg });
+});
 
-// Home Page where you should display 5 random images of dogs via DoggoApi
-app.get("/", async (req,res)=>{
-    
+// Page where you should display 5 random images of dogs via DoggoApi
+app.get("/all-breeds", async (req, res) => {
+  let dogImgs = await myDog.getMultipleRandomDogs(5);
+  res.render("all-breeds", dogImgs);
 });
 
 // Schnauzer Page where you should display 1 image of a Schnauzer (Breed) Miniature (Subreed) via DoggoApi
-app.get("/schnauzer", async (req,res)=>{
-
+app.get("/schnauzer", async (req, res) => {
+  let schnauzer = await myDog.getARandomSubBreedImage("schnauzer", "miniature");
+  res.render("schnauzer", { schnauzer });
 });
 
 // Listen in PORT 3000
