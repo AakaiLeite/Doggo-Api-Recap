@@ -22,6 +22,7 @@ header {
   justify-content: space-between;
   align-items: center;
   align-self: flex-start;
+  margin-bottom: auto;
   top: 0px;
   height: 80px;
   min-height: 80px;
@@ -42,40 +43,12 @@ nav a {
   color: white;
 }
 
-.index-div {
+.main-div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 160px 30px 30px 30px;
-}
-
-.index-div h1 {
-  font-weight: 18px;
-}
-
-.all-breeds-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 160px 30px 30px 30px;
-}
-
-.all-breeds-div h1 {
-  font-weight: 18px;
-}
-
-.schnauzer-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 160px 30px 30px 30px;
-}
-
-.schnauzer-div h1 {
-  font-weight: 18px;
 }
 
 .dog-images {
